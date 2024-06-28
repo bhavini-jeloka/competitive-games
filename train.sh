@@ -1,5 +1,5 @@
 #!/bin/sh
-env="simple_tag_v3"
+env="simple_tag"
 model_dir="results"
 
 echo "env is ${env} and model dir is ${model_dir}"

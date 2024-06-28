@@ -12,6 +12,14 @@ of size (env.world.dim_p + env.world.dim_c, 1). Physical actions precede
 communication actions in this array. See environment.py for more details.
 """
 
+import os
+import sys
+
+root_directory = os.path.abspath(os.path.join(os.path.dirname(__file__), '..'))
+
+submodule_path = os.path.join(root_directory, 'multiagent-particle-envs')
+sys.path.append(submodule_path)
+
 def make_env(scenario_name, benchmark=False, discrete_action=False):
     '''
     Creates a MultiAgentEnv object as env. This can be used similar to a gym
@@ -29,6 +37,7 @@ def make_env(scenario_name, benchmark=False, discrete_action=False):
         .action_space       :   Returns the action space for each agent
         .n                  :   Returns the number of Agents
     '''
+
     from multiagent.environment import MultiAgentEnv
     import multiagent.scenarios as scenarios
 
